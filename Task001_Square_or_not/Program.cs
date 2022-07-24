@@ -7,7 +7,7 @@ Console.Write("A = ");
 double.TryParse(Console.ReadLine(), out double numberA);
 
 Console.WriteLine("Введите число B");
-Console.Write("A = ");
+Console.Write("B = ");
 double.TryParse(Console.ReadLine(), out double numberB);
 
 if(numberA == numberB * numberB)
