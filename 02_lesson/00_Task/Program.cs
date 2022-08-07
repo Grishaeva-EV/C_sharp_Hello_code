@@ -3,7 +3,6 @@
 int number = new Random().Next(100, 999);
 System.Console.WriteLine("случайное число = " + number);
 System.Console.WriteLine("первая цифра = " + number/100);
-//System.Console.WriteLine("second number = " + (number/100)*100);
 System.Console.WriteLine("последняя цифра = " + number % 10);
 System.Console.WriteLine("результат вычисления = " + ((number/100)*10 + number % 10)); //вычисляем число
 System.Console.WriteLine("результат конкатенации = " + (number/100) + number % 10); //конкатенация строки и цифр
