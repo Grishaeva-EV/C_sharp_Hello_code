@@ -7,7 +7,6 @@ double[] FillArray(int n)
     double[] arr = new double[n];
     for (int ind = 0; ind < n; ind++)
     {
-        //arr[ind] = new Random.NextDouble(100, 999);
         arr[ind] = new Random().NextDouble()*10000;
         System.Console.WriteLine($"arr[{ind}] = {arr[ind]}");
     }
@@ -39,6 +38,10 @@ for (int i = 0; i < N; i++)
     if(array[i] < array[min]) {min = i;}
 }
 
-System.Console.WriteLine($"Наибольший элемент массива равен {array[max]}, а его индекс равен {max}");
-System.Console.WriteLine($"Наименьший элемент массива равен {array[min]}, а его индекс равен {min}");
+// пока решала, забыла что нужно
+// System.Console.WriteLine($"Наибольший элемент массива равен {array[max]}, а его индекс равен {max}");
+// System.Console.WriteLine($"Наименьший элемент массива равен {array[min]}, а его индекс равен {min}");
+// System.Console.WriteLine();
+
+System.Console.WriteLine($"Разница между наибольшим и наименьшим элементами массива равна " + (array[max] - array[min]));
 System.Console.WriteLine();

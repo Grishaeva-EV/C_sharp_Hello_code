@@ -4,12 +4,12 @@
 //System.Console.WriteLine("(натуральное число)");
 //System.Console.WriteLine("N = ");
 
-// bool result = int.TryParse(Console.ReadLine(), out int N);
-//if ((result != true) | (N < 1)) //проверка типа введенного значения
-//{
-    //Console.WriteLine("Вы ввели не натуральное число. Запустите программу снова.");
-//}    
-//else
+bool result = int.TryParse(Console.ReadLine(), out int N);
+if ((result != true) | (N < 1)) //проверка типа введенного значения
+{
+    Console.WriteLine("Вы ввели не натуральное число. Запустите программу снова.");
+}    
+else
     
 System.Console.WriteLine("Введите значения каждого элемента массива");
 int index = 0;
