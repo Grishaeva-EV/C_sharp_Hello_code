@@ -4,14 +4,12 @@
 int Read() //проверка ввода на integer
 {
     bool result = int.TryParse(Console.ReadLine(), out int A);
-    if (result != true) //проверка типа введенного значения
+
+    while(result != true)
     {
-        while(result != true)
-        {
-            Console.WriteLine("Вы ввели не целое число. Повторите попытку.");
-            result = int.TryParse(Console.ReadLine(), out A);
-        }    
-    }
+        Console.WriteLine("Вы ввели не целое число. Повторите попытку.");
+        result = int.TryParse(Console.ReadLine(), out A);
+    }    
     
     return(A);
 }
