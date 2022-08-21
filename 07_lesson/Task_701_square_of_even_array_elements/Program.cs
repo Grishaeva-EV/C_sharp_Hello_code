@@ -1,24 +1,8 @@
-﻿// Task_700_array_two_rangs
-// Задайте двумерный массив размером m×n, заполненный случайными целыми числами
-// m = 3, n = 4.
-// 1 4 8 19
-// 5 -2 33 -2
-// 77 3 8 1
-
-// варианты задания двумерного массива
-//int[,] nums1;
-int[,] nums2 = new int[3, 4];
-int[,] nums3 = new int[3, 4] { {1, 4, 8, 19}, {5, -2, 33, -2}, {77, 3, 8, 1} };
-int[,] nums4 = new int[,] { {1, 4, 8, 19}, {5, -2, 33, -2}, {77, 3, 8, 1} };;
-int[,] nums5 = new [,]{ {1, 4, 8, 19}, {5, -2, 33, -2}, {77, 3, 8, 1} };
-int[,] nums6 = { {1, 4, 8, 19}, {5, -2, 33, -2}, {77, 3, 8, 1} };
-
-// из задачи следует, что m и n надо запросить у пользователя
-// но заполнить массив случайными числами
-// очевидно, что измерение массива - натуральное число
-// если одно из измерений равно 1, мы получаем одномерный массив
-
-// раньше ввод с консоли проверяли циклом, теперь организуем проверку с помощью рекурсии
+﻿// Task_701_square_of_even_array_elements
+// Find squares of even idex elements in the given array
+// and replace them by squares of them
+// Задайте двумерный массив. 
+// Найдите элементы, у которых оба индекса чётные, и замените эти элементы на их квадраты.
 
 /// <summary>
 /// Thrown when input value is Integer and greater than 0
@@ -59,7 +43,7 @@ int[,] FillRandomIntegerArray(int inputRowCount, int inputColumnCount)
     {
         for(int k=0; k < inputColumnCount; k++)
         {
-            integerArray[i, k] = new Random().Next();            
+            integerArray[i, k] = new Random().Next(2, 100);            
         }
     }
 
@@ -87,6 +71,31 @@ void WriteArray(int[,] inputArray)
 }
 
 
+/// <summary>
+/// Find squares of even idex elements in the given array
+/// and replace them by squares of them
+/// </summary>
+/// <param name="givenArray">
+/// given 2 rang array
+/// </param>
+void SquareEvenArrayElements(int[,] givenArray)
+// int[,] SquareEvenArrayElements(int[,] givenArray)
+{
+    System.Console.WriteLine();
+    for(int i=1; i < (1 + givenArray.GetUpperBound(0)); i+=2)
+    {
+        for(int k=1; k < (1 + givenArray.GetUpperBound(1)); k+=2)
+        {
+            givenArray[i, k] = givenArray[i, k] * givenArray[i, k];
+        }
+    }
+
+//    return givenArray; //если нужно будет возвращать в другой массив изменения
+// то пишем функцию, а не процедуру
+}
+
+
+
 System.Console.WriteLine("Введите количество строк таблицы (целое число больше 1)");
 int rowCount = CheckConsoleInput();
 System.Console.WriteLine("Введите количество столбцов таблицы (целое число больше 1)");
@@ -97,3 +106,10 @@ int[,] array = FillRandomIntegerArray(rowCount, columnCount);
 System.Console.WriteLine();
 System.Console.WriteLine($"Массив {rowCount} * {columnCount}, заполненный случайными целыми числами:");
 WriteArray(array);
+
+SquareEvenArrayElements(array);
+
+System.Console.WriteLine();
+System.Console.WriteLine("Элементы с чётными индексами обоих измерений заменены квадраты этих элементов:");
+WriteArray(array);
+
