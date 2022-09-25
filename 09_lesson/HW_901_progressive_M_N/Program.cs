@@ -1,4 +1,4 @@
-﻿// HW_900_progressive_1_N: input integers M and N; 
+﻿// HW_901_progressive_M_N: input integers M and N; 
 // output arithmetic progression [M .. N]
 // Задача 64: Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
 // M = 1; N = 5. -> "1, 2, 3, 4, 5"
