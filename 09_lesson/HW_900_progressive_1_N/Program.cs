@@ -1,4 +1,8 @@
 ﻿// HW_900_progressive_1_N: input integer; output arithmetic progression [1 .. N]
+// Задача 63: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от 1 до N.
+// N = 5 -> "1, 2, 3, 4, 5"
+// N = 6 -> "1, 2, 3, 4, 5, 6"
+
 
 
 /// <summary>
@@ -23,11 +27,11 @@ int F(int i)
 {
     if (i == 1) 
     {
-        System.Console.Write("1  ");
+        System.Console.Write("1");
         return i;
     }
     i = F(i-1)+1;
-    System.Console.Write(i + "  ");
+    System.Console.Write("  " + i);
     return i;
 }
 
