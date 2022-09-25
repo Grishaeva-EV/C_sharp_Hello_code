@@ -23,6 +23,16 @@ int CheckConsoleInput()
     return inputNumber;
 }
 
+
+/// <summary>
+/// output in console all integers from 1 to i
+/// </summary>
+/// <param name="i">
+/// input integer > 0
+/// </param>
+/// <returns>
+/// returns taked number
+/// </returns>
 int F(int i)
 {
     if (i == 1) 

@@ -23,14 +23,27 @@ int CheckConsoleInput()
     return inputNumber;
 }
 
-int F(int big, int small)
+/// <summary>
+/// output in console all integers from big to small
+/// </summary>
+/// <param name="big">
+/// input integer > 0
+/// </param>
+/// <param name="small">
+/// input integer > 0
+/// big >= small
+/// </param>
+/// <returns>
+/// returns big
+/// </returns>
+int ProgressiveBetweenTwoIntegers(int big, int small)
 {
     if (big == small) 
     {
         System.Console.Write(big);
         return big;
     }
-    big = F(big-1, small) + 1;
+    big = ProgressiveBetweenTwoIntegers(big-1, small) + 1;
     System.Console.Write("  " + big);
     return big;
 }
@@ -45,9 +58,9 @@ System.Console.WriteLine();
 
 if (m > n)
 {
-    F(m, n);
+    ProgressiveBetweenTwoIntegers(m, n);
 }
 else
 {
-    F(n, m);
+    ProgressiveBetweenTwoIntegers(n, m);
 }

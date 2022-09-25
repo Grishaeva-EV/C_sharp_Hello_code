@@ -1,14 +1,12 @@
 ﻿// HW_903_summ_progressive_M_N_positive
-
-// HW_902_progressive_M_N_negative: input integers M and N; 
-// output arithmetic progression [M .. N]
-// Задача 65: Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
-// M = 1; N = 5 -> "1, 2, 3, 4, 5"
-// M = 4; N = 8 -> "4, 5, 6, 7, 8"
-
+// input integers M and N; 
+// output summ of arithmetic progression [M .. N]
+// Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+// M = 1; N = 15 -> 120
+// M = 4; N = 8. -> 30
 
 
-// так как я не нашла различий между задачами 64 и 65, кроме ошибки в примере
+
 // я решила в этом решении выводить только натуральную часть (от 1 до ...) промежутка между целыми числами M и N
 // поэтому они только целые, в т.ч. 0 и отрицательные
 
@@ -31,7 +29,22 @@ int CheckConsoleInput()
     return inputNumber;
 }
 
-int F(int big, int small)
+/// <summary>
+/// adds all integers>0 from big to small
+/// output in console "не существует"
+/// </summary>
+/// <param name="big">
+/// input integer
+/// </param>
+/// <param name="small">
+/// input integer
+/// big >= small
+/// </param>
+/// <returns>
+/// returns summ of all integers>0 from big to small
+/// or returns 0
+/// </returns>
+int SummAllPositiveIntegersBetweenTwoIntegers(int big, int small)
 {
     if (big < 1 && small < 1)
     {
@@ -45,7 +58,7 @@ int F(int big, int small)
         return big;
     }
 
-    big = big + F(big-1, small);
+    big = big + SummAllPositiveIntegersBetweenTwoIntegers(big-1, small);
     
     return big;    
 }
@@ -64,11 +77,11 @@ System.Console.WriteLine();
 System.Console.Write($"Между числами {n} и {m} сумма натуральных чисел "); 
 if (m > n)
 {
-    System.Console.WriteLine(F(m, n));        
+    System.Console.WriteLine(SummAllPositiveIntegersBetweenTwoIntegers(m, n));        
 }
 else
 {
-    System.Console.WriteLine(F(n, m));    
+    System.Console.WriteLine(SummAllPositiveIntegersBetweenTwoIntegers(n, m));    
 }
 
 
